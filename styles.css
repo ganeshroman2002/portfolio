@@ -1,0 +1,805 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    position: absolute;
+    top: 0;
+    width: 90%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.logo-image {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links a {
+    margin: 0 15px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease;
+}
+
+.nav-links a:hover {
+    border-bottom: 2px solid white;
+}
+
+.social-icons {
+    margin-left: 20px;
+    display: flex;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    font-size: 1.2rem;
+    color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #444;
+        padding: 15px;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .social-icons {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+        font-size: 2rem;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .logo {
+        flex: 1;
+    }
+}
+
+/* Base styles for nav links */
+.nav-links {
+    display: none;
+}
+
+/* Show links when active */
+.nav-links.active {
+    display: flex;
+}
+
+/* For smaller screens */
+
+
+/* For larger screens */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        position: static;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .social-icons {
+        display: flex;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Hero Section */
+.header {
+    text-align: left; /* Align text to the left */
+    position: relative;
+    padding: 100px 10%;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 600px; /* Limit text width for a cleaner design */
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    line-height: 1.3;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    color: white;
+}
+
+.cta-button {
+    padding: 10px 30px;
+    background: #008CFF;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #005bb5;
+}
+
+/* Glowing Blob */
+.blob-container {
+    position: absolute;
+    bottom: -10px;
+    right: -50px;
+    z-index: -1;
+}
+
+.blob-container img {
+    width: 600px;
+    animation: blobMove 6s infinite alternate ease-in-out;
+}
+
+@keyframes blobMove {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-40px);
+    }
+}
+/* About Section */
+/* About Section */
+/* About Section */
+/* About Section */
+/* About Section */
+/* About Section */
+.about-section {
+    display: flex;
+    justify-content: space-between; /* Aligns text and images side-by-side */
+    align-items: center; /* Vertically centers both text and images */
+    margin-top: 50px;
+    padding: 50px 10%; /* Adds padding around the section */
+}
+
+/* Right Image Section */
+.right-section {
+    flex: 1;
+    /* position: relative; */
+    display: flex;
+    justify-content: center; /* Centers images horizontally */
+    align-items: center; /* Centers images vertically */
+    max-width: 50%; /* Limits the width of the image area */
+}
+
+.phone {
+    width: 300px; /* Sets a uniform size for both images */
+    height: auto;
+    position: absolute;
+    margin-top: 100px;
+    border-radius: 20px;
+/*    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5); /* Adds depth with shadow */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.phone-back {
+    transform: translate(-100px, -50px) scale(0.9); /* Slightly moves the back image */
+    opacity: 0.7; /* Makes the back image semi-transparent */
+    z-index: 5;
+}
+
+.phone-front {
+    transform: translate(40px, 80px) scale(1); /* Positions the front image */
+    z-index: 10; /* Ensures the front image appears above the back image */
+}
+
+/* Hover Effect */
+.right-section:hover .phone-back {
+    transform: translate(-100px, -10px) scale(0.95); /* Adds motion to the back image */
+    opacity: 0.8;
+}
+
+.right-section:hover .phone-front {
+    transform: translate(10px, 10px) scale(1.05); /* Adds motion to the front image */
+}
+
+/* Left Text Section */
+.about-content {
+    flex: 1;
+    max-width: 50%; /* Limits the width of the text area */
+    text-align: right; /* Aligns text to the right */
+}
+
+.about-content p {
+    font-size: 2rem; /* Increases font size */
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 1.5; /* Improves readability */
+    text-transform: capitalize; /* Formats text nicely */
+}
+
+
+
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+        text-align: center; /* Center-align text for better readability */
+    }
+
+    .about-content {
+        order: 1; /* Text comes first */
+        margin-bottom: 20px; /* Add spacing between text and images */
+    }
+
+    .right-section {
+        order: 2; /* Images come after the text */
+        flex-direction: column; /* Stack images vertically */
+        margin-top: 40%;
+        margin-bottom: 40%;
+    }
+
+    .phone {
+        max-width: 70%; /* Adjust image size for smaller screens */
+        position: absolute;
+    }
+}
+
+
+
+
+
+
+
+
+.info-section {
+    display: flex;
+    justify-content: space-between; /* Aligns text and images side-by-side */
+    align-items: center; /* Vertically centers both text and images */
+    margin-top: 50px;
+    padding: 50px 10%; /* Adds padding around the section */
+}
+
+/* Right Image Section */
+.image-container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center; /* Centers images horizontally */
+    align-items: center; /* Centers images vertically */
+    max-width: 50%; /* Limits the width of the image area */
+}
+
+.device {
+    width: 400px; /* Sets a uniform size for both images */
+    height: auto;
+    position: absolute;
+    margin-top: 100px;
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.device-back {
+    transform: translate(-100px, -50px) scale(0.9); /* Slightly moves the back image */
+    opacity: 0.7; /* Makes the back image semi-transparent */
+    z-index: 5;
+}
+
+.device-front {
+    transform: translate(40px, 80px) scale(1); /* Positions the front image */
+    z-index: 10; /* Ensures the front image appears above the back image */
+}
+
+/* Hover Effect */
+.image-container:hover .device-back {
+    transform: translate(-100px, -10px) scale(0.95); /* Adds motion to the back image */
+    opacity: 0.8;
+}
+
+.image-container:hover .device-front {
+    transform: translate(10px, 10px) scale(1.05); /* Adds motion to the front image */
+}
+
+/* Left Text Section */
+.content {
+    flex: 1;
+    max-width: 50%; /* Limits the width of the text area */
+    text-align: right; /* Aligns text to the right */
+    position: relative; /* To position animated background behind the text */
+    z-index: 2; /* Ensures content is above the background */
+}
+
+.content p {
+    font-size: 2rem; /* Increases font size */
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 1.5; /* Improves readability */
+    text-transform: capitalize; /* Formats text nicely */
+}
+
+/* Animated Background */
+.animated-bg {
+    position: absolute;
+    transform: translate(10%, -50%);
+    max-height: 100px;
+    z-index: -1; /* Places it behind the text and images */
+    animation: blobMove 8s infinite alternate ease-in-out;
+    opacity: 0.2; /* Makes the background less intrusive */
+}
+
+.animated-bg img {
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
+    transform: translate(40%, -10%) rotate(310deg); /* Added rotation */
+}
+
+@media (max-width: 768px) {
+    .scroll.phone-animated {
+        align-items: center;
+            }
+}
+/* New Section Styling */
+/* New Section Styling */
+.future-section {
+    display: flex;
+    justify-content: flex-end;  /* Aligns content to the right */
+    align-items: center;
+    padding: 50px 10%;
+    color: #ffffff; /* White text */
+    height: 100vh; /* Ensures the section takes full height */
+}
+
+.future-content {
+    max-width: 600px;
+    text-align: right; /* Aligns text to the right */
+}
+
+.future-content h1 {
+    font-size: 3rem; /* Large text for emphasis */
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.future-content h1 span {
+    background: linear-gradient(90deg, #b100ff, #00d4ff); /* Gradient from purple to blue */
+    -webkit-background-clip: text; /* Clips background to text */
+    color: transparent; /* Makes text color transparent so gradient is visible */
+}
+
+
+
+.view-designs-btn {
+    padding: 10px 30px;
+    background: #008CFF;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.view-designs-btn:hover {
+        background: #005bb5;
+
+}
+
+.cta-button {
+    padding: 10px 30px;
+    background: #008CFF;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #005bb5;
+}
+/* Scroll Animation Section */
+/* Scroll Animation Section */
+/* Scroll Animation Section */
+.scroll-animation-section {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    margin-top: 250px;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative; /* Ensure the phone is positioned relative to this section */
+    overflow: hidden;
+}
+.moc-info{
+        position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: opacity 0.3s ease-in-out;
+    line-height: 1.4;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    color: white;
+    max-width: 300px;
+        flex: 1;
+    max-width: 50%; /* Limits the width of the text area */
+    text-align: right; /* Aligns text to the right */
+    font-size: 2rem; /* Increases font size */
+
+
+}
+/* Phone Image */
+.phone-animated {
+    width: 300px; /* Adjust width as necessary */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute; /* Absolute position */
+    top: 50%; /* Move the top edge to the center */
+    left: 50%; /* Move the left edge to the center */
+    transform: translate(-50%, -50%); /* Offset by half of its width and height to center */
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out; /* Smooth transition */
+}
+
+
+
+
+
+
+
+
+.overlay:nth-child(1) {
+  --hue: 165;
+  --saturation: 82.26%;
+  --lightness: 51.37%;
+}
+
+.overlay:nth-child(2) {
+  --hue: 291.34;
+  --saturation: 95.9%;
+  --lightness: 61.76%;
+}
+
+.overlay:nth-child(3) {
+      --hue: 291.34;
+  --saturation: 95.9%;
+  --lightness: 61.76%;
+
+}
+
+
+
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  user-select: none;
+  opacity: var(--opacity, 0);
+    -webkit-mask: radial-gradient(
+    25rem 25rem at var(--x) var(--y),
+    #000 1%,
+    transparent 50%
+  );
+  mask: radial-gradient(
+    25rem 25rem at var(--x, 50%) var(--y, 50%),
+    #000 1%,
+    transparent 50%
+  );
+  background: rgba(123, 234, 255, 0.2);
+  transition: 400ms mask ease, 400ms opacity ease;
+  will-change: mask, opacity;
+}
+
+
+
+
+
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+    gap: 2rem; /* Space between left and right sections */
+    padding: 40px 0; /* Add some padding on the top and bottom */
+}
+
+.left-section {
+    flex: 1;
+    padding: 20px;
+    margin-top: -200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    text-align: left; /* Align text to the left */
+}
+
+.logo {
+    width: 50px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 28px;
+    margin: 10px 0;
+    color: #ffffff; /* White text */
+    font-weight: 700;
+}
+
+p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #eceff1; /* Light gray text */
+}
+
+.download-btn {
+    background: linear-gradient(90deg, #b100ff, #00d4ff); /* Gradient color */
+    color: white;
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make it look like a button */
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px 0;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #520b75;
+}
+
+h2 {
+    font-size: 6rem; /* Large text for emphasis */
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: #ffffff; /* White text */
+    text-align: left; /* Align text to the left */
+}
+
+.r-section {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -200px;
+}
+
+.r-section img {
+    max-width: 100%; /* Ensures image is responsive */
+    object-fit: cover; /* Maintain image aspect ratio */
+    border-radius: 15px; /* Optional: Round corners of image */
+}
+
+/* Phone Animation */
+.phone1 {
+    width: 400px;
+    height: auto;
+    position: absolute;
+    margin-top: 100px;
+    border-radius: 20px;
+    transform-origin: center center;
+    transition: transform 0.4s ease, opacity 0.4s ease, box-shadow 0.3s ease-in-out;
+}
+
+.phone-back1 {
+    transform: translate(100px, -50px) scale(0.9);
+    opacity: 0.7;
+    z-index: 5;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.phone-front1 {
+    transform: translate(40px, 80px) scale(1);
+    z-index: 10;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Hover Effect with New Animation */
+.r-section:hover .phone-back1 {
+    transform: translate(120px, -40px) scale(1); /* Smoother transition with more movement */
+    opacity: 0.9;
+}
+
+.r-section:hover .phone-front1 {
+    transform: translate(60px, 40px) scale(1.1); /* Larger scale for more noticeable effect */
+}
+
+/* Optional: Adding a shadow effect */
+.r-section:hover .phone-back1,
+.r-section:hover .phone-front1 {
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2); /* Subtle shadow to give depth */
+}
+
+
+        /* Container for separate scrolling */
+/* Container for separate scrolling */
+/* Container for separate scrolling */
+.container2 {
+    max-height: 800px; /* Set height for scrollable container */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    scroll-snap-type: y mandatory; /* Enable snap scrolling */
+        scroll-behavior: smooth; /* Enable smooth scrolling */
+
+}
+
+/* Full-screen sections */
+/* Container for separate scrolling */
+
+
+/* Full-screen sections */
+.full-screen-section {
+    width: 100%;
+    height: 100vh; /* Set full height to fit the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start; /* Snap the section to the top */
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+
+}
+
+/* Show the active section */
+.active {
+    opacity: 1;
+}
+
+/* Image wrapper */
+.image-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Make sure images fit perfectly in the container */
+.image-wrapper img {
+    max-width: 100%;  /* Ensure the image width does not exceed the container width */
+    max-height: 100%; /* Ensure the image height does not exceed the container height */
+    object-fit: contain; /* Scale the image while maintaining aspect ratio */
+}
+
+/* Hide the scrollbar */
+.container2::-webkit-scrollbar {
+    display: none;
+}
+
+/* Footer styling */
+/* Footer styling */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 20px; /* Adjust spacing to ensure it's separated from content */
+    position: relative;
+    width: 100%;
+    z-index: 10;
+    background-image: url('dcd365667211db39f72153d74769c70a.jpg'); /* Update with your image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Footer content */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer a {
+    color: #f1f1f1;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    color: #ff6347; /* Hover color */
+}
+
+.social-icons {
+    margin-top: 10px;
+        align-items: center;
+    justify-content: center;
+
+}
+
+.social-icons a {
+    margin: 0 15px;
+    font-size: 24px;
+    color: white;
+}
+
+.social-icons a:hover {
+    color: #ff6347; /* Hover color for social icons */
+}
