@@ -155,6 +155,28 @@ img {
 
 
 
+@media (max-width: 768px) {
+    .container{
+        max-width: 300px;
+    }
+    .container p{
+        max-width: 200px;
+    }
+    .download-btn-text {
+        max-width: 200px;
+        font-size: xx-large; /* Smaller font size for smaller screens */
+    }
+
+    .download-btn {
+        max-width: 150px; /* Adjusted max width for smaller screens */
+        width: 100%; /* Maintains responsiveness */
+    }
+    .animated-bg{
+        max-width: 200px;
+    }
+}
+
+
 
 
 
@@ -297,12 +319,6 @@ img {
 }
 
 
-@media (max-width: 768px) {
-    .download-btn{
-        max-width: 400px;
-    }
-    
-}
 
 
 /* Media Query for Small Screens */
@@ -407,10 +423,10 @@ img {
 .animated-bg {
     position: absolute;
     transform: translate(10%, -50%);
-    max-height: 100px;
     z-index: -1; /* Places it behind the text and images */
     animation: blobMove 8s infinite alternate ease-in-out;
     opacity: 0.2; /* Makes the background less intrusive */
+    overflow: hidden;
 }
 
 .animated-bg img {
@@ -641,7 +657,7 @@ p {
 }
 
 h2 {
-    font-size: 6rem; /* Large text for emphasis */
+    font-size: 2rem; /* Large text for emphasis */
     font-weight: bold;
     margin-bottom: 20px;
     line-height: 1.2;
@@ -655,7 +671,8 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -200px;
+    max-width: 400px;
+    max-width: 400px;
 }
 
 .r-section img {
